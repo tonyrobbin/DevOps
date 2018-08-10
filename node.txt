@@ -1,0 +1,64 @@
+GITHUB-Credentials
+-------------------------
+username :tonyrobbin
+password :reddy41199
+email :dasireddy777@gmail.com
+
+
+Git
+========================
+$ yum install git -y
+$ git --version
+git version 1.8.3.1
+$ which git
+/usr/bin/git
+
+$ git config --global user.name "tonyrobbin"
+$ git config --global user.email dasireddy777@gmail.com
+$ git config --global push.default simple
+$ git config --global --list
+
+
+=================JAVA============================================
+$ yum install wget -y
+$ wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.rpm
+$ rpm -ivh jdk-8u131-linux-x64.rpm
+$ java -version
+
+==================Maven==============================
+$ yum install maven -y
+$ mvn --version
+Apache Maven 3.0.5 (Red Hat 3.0.5-17)
+$ which mvn
+/usr/bin/mvn
+
+=================JENKINS============================================
+
+#To use this repository, run the following command:
+
+$ sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+$ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+
+#With that set up, the Jenkins package can be installed with:
+$ yum install jenkins
+ 
+#To stop the Jenkins Services:
+$ systemctl stop jenkins
+#To start the Jenkins Services:
+ $ systemctl start jenkins 
+#To verify if the Jenkins Services are running or not:
+ $ ps -eaf | grep -i jenkins 
+#To know the jenkins used directory location, refer the process log of following commands
+ $ ps -eaf | grep -i jenkins 
+
+
+# Disable the firewall
+
+firewall-cmd --zone=public --add-port=8080/tcp --permanent
+firewall-cmd --zone=public --add-service=http --permanent
+firewall-cmd --reload
+firewall-cmd --list-all
+
+# Jenkins consolemanagement
+
+http://192.168.161.151:8080/
