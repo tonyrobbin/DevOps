@@ -3,4 +3,4 @@
 <role rolename="manager-jmx"/>
 <role rolename="manager-status"/>
 <user username="admin" password="admin" roles="mager-gui, manager-script, manager-jmx, manager-status"/>
-<user username="tomcat" password="s3cret" roles="manager-gui"/>
+<user username="tomcat" password="s3cret" roles="manager-script"/>
